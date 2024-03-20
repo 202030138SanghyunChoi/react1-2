@@ -34,6 +34,12 @@
     * 프로젝트 생성 명령어: npx create-react-app <프로젝트이름>
         * *4058 오류 발생 시 - 최신 버전으로 변경(npm install -g npm@latest) 후 프로젝트 생성*
         * *4077 오류 발생 시 - 삭제 후(npm uninstall -g create-react-app) 재설치 (npm install -g create-react-app)*
+    * 프로젝트 실행 명령어: npm start
+    * public의 index.html의 루트 아이디에 전송
+    * 메인 컴포넌트는 App.js에 작성하고 return안에는 하나의 태그만 전송가능(주로 div로 묶어서 전송)
+    * 프론트 개발 시에는 시멘틱 태그 사용할 것(header, body, footer 등)
+    * index.js에서는 App을 import 시킨후 React.StrictMode에 App을 넣어 index.html의 root로 전송하는 내용으로 구성됨.(구조만 이해. 외울 필요 X)
+    * xml 느낌으로 싱글 태그라면 <~/>라고 명확히 작성해야함.  
 
 
 ## React1 2주차 수업(03.13)
