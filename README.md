@@ -39,7 +39,8 @@
     * 메인 컴포넌트는 App.js에 작성하고 return안에는 하나의 태그만 전송가능(주로 div로 묶어서 전송)
     * 프론트 개발 시에는 시멘틱 태그 사용할 것(header, body, footer 등)
     * index.js에서는 App을 import 시킨후 React.StrictMode에 App을 넣어 index.html의 root로 전송하는 내용으로 구성됨.(구조만 이해. 외울 필요 X)
-    * xml 느낌으로 싱글 태그라면 <~/>라고 명확히 작성해야함.  
+    * xml 느낌으로 싱글 태그라면 <~/>라고 명확히 작성해야함.
+    * package.json에는 모듈에 들어갈 자료들이 적혀있음 package-lock.json에는 더 상세한 내용이 들어가있음. scripts에는 축약된 명령어들이 포함되어있음. npm install 명령어를 통해 package의 모듈들을 참고하여 모듈 다운. 패키지의 모듈 폴더를 전부 삭제하고, 캐시도 삭제(npm cache clean -force)한 후에 npm install로 설치하면 의존성 문제 해결
 
 
 ## React1 2주차 수업(03.13)
