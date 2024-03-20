@@ -33,7 +33,7 @@
 6. create-react-app 만들기
     * 프로젝트 생성 명령어: npx create-react-app <프로젝트이름>
         * *4058 오류 발생 시 - 최신 버전으로 변경(npm install -g npm@latest) 후 프로젝트 생성*
-        * *4077 오류 발생 시 - 계속 반복*
+        * *4077 오류 발생 시 - 삭제 후(npm uninstall -g create-react-app) 재설치 (npm install -g create-react-app)*
 
 
 ## React1 2주차 수업(03.13)
