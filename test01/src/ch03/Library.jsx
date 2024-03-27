@@ -1,6 +1,8 @@
 import React from "react";
+// Book.jsx 참조
 import Book from "./Book";
 
+// Library jsx 생성
 function Library(props) {
     return (
         <div>
