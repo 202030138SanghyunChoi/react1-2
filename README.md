@@ -16,7 +16,60 @@
     * 큰따옴표 사이에 문자열 삽입
     * 중괄호 사이에 자바스크립트 코드 삽입
         * **JSX에서는 중괄호 사용 시 거의 무조건 자바스크립트가 들어감**
-    
+5. 엘리먼트의 정의 - 리액트 앱의 가장 작은 빌딩 블록
+    * HTML 요소
+    * 리액트 엘리먼트 : DOM 엘리먼트의 가상 표현으로 부분적인 정보 전달을 하기 때문에 DOM 엘리먼트에 비해 가볍다.
+6. 엘리먼트의 생김새 - 자바 스크립트의 객체 형태로 존재
+    ```js
+    React.createElemet(
+        type,
+        [props],
+        [...children]
+    )
+    ```
+    VV아래로 변경(JS > JSX)VV<br><br>
+    ```jsx
+    {
+        type: Button,
+        props: {
+            color: 'green',
+            children: 'Hello, element!'
+        }
+    }
+    ```
+7. 앨리먼트의 특징
+    * 불변성 - 변하지 않는 성질. 앨리먼트 생성 후에는 children이나 attributes를 변경할 수 없음. 갱신이 필요하다면 새로 생성해서 기존 앨리먼트와 교체해야함.
+8. 앨리먼트 렌더링
+    ```jsx
+    <div id = "root"></div>
+    ```
+    root DOM node로서 모든 리액트 앨리먼트들이 이 안에 렌더링 됨.
+    ```jsx
+    const root root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(element);
+    ```
+    root div에 렌더링하는 함수(암기)    
+9. 렌더링 앨리먼트 업데이트
+    * 자바스크립트의 setInterval() 함수를 사용해서 tick()함수를 매초 호출
+    * tick() 함수가 호출될 때마다 기존 앨리먼트를 새로운 앨리먼트를 생성하여 변경시킴.
+10. 컴포넌트
+    *  리액트는 모든 페이지가 컴포넌트로 구성되어 있고, 하나의 컴포넌트는 또 다른 여러개의 컴포넌트로 구성됨.
+    * 컴포넌트는 재사용 가능하기에 전체 코드의 양을 줄일 수 있어 개발시간과 유지보수 비용도 줄일 수 있음.
+    * 컴포넌트의 입력은 props가 담당하고 출력은 리액트 앨리먼트의 형태로 출력됨
+    ![그림3](image/image3.jpg)
+11. Props - 리액트 컴포넌트의 속성
+    * *붕어빵의 속재료와 비슷한 느낌*
+    * 같은 리액트 컴포넌트에서 눈에 보이는 글자나 색깔 등의 속성을 바꾸고 싶을 때 사용하는 컴포넌트의 속 재료
+    * 컴포넌트에 전달할 다양한 정보를 담고 있는 자바스크립트 객체
+12. Props의 특징
+    * Read-Only(변경 불가)
+    * 속성이 다른 앨리먼트를 생성하려면 새로운 props를 컴포넌트에 전달시켜야함.
+    * Pure 함수와 Impure 함수
+        1. Pure 함수 - 입력값을 변경하지 않으며, 같은 입력값에 대해서는 항상 같은 출력값을 낸다.(함수 내부에서 변경 X)
+        2. Impure 함수 - 입력으로 받은 파라미터 값을 변경할 수 있음.(함수 내부에서 변경 O)
+    리액트 컴포넌트는 Pure 함수의 역할을 한다.
+
+
 
 ## React1 3주차 수업(03.20)
 1. 리액트의 정의
@@ -49,10 +102,10 @@
     1. 방대한 학습량 - 꾸준한 업데이트, 자바 스크립트 등의 추가 공부
     2. 높은 상태 관리 복잡도 - state, life cycle 등의 개념(공부를 해봐야 알수 있음)
 6. create-react-app 만들기
-    * 프로젝트 생성 명령어: npx create-react-app <프로젝트이름>
+    * 프로젝트 생성 명령어: **npx create-react-app <프로젝트이름>**
         * *4058 오류 발생 시 - 최신 버전으로 변경(npm install -g npm@latest) 후 프로젝트 생성*
         * *4077 오류 발생 시 - 삭제 후(npm uninstall -g create-react-app) 재설치 (npm install -g create-react-app)*
-    * 프로젝트 실행 명령어: npm start
+    * 프로젝트 실행 명령어: **npm start**
     * public의 index.html의 루트 아이디에 전송
     * 메인 컴포넌트는 App.js에 작성하고 return안에는 하나의 태그만 전송가능(주로 div로 묶어서 전송)
     * 프론트 개발 시에는 시멘틱 태그 사용할 것(header, body, footer 등)
