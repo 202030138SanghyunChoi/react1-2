@@ -1,5 +1,59 @@
 # 최상현 202030138
 
+## React1 12주차 수업(05.22)
+1. 리스트와 키
+    1. 리스트 - 자바 스크립트의 변수나 객체를 하나의 변수로 묶어 놓은 배열과 같은 것.
+    2. 키 - 각 객체나 아이템을 구분할 수 있는 고유한 값
+    * 리액트에서는 배열과 키를 사용하는 반복되는 다수의 엘리먼트를 쉽게 렌더링할 수 있음.
+
+2. MAP 함수의 사용 예 **!굉장히 중요!**
+    ```jsx
+    const numbers = [1, 2, 3, 4, 5];
+
+    const listItems = numbers.map((number) =>
+        <li>{number}</li>
+    )
+    ```
+
+3. 리스트의 키 조건
+    * 키는 리스트에서 어떤 아이템이 변경, 추가, 제거 되었는지 구분하기 위해 사용
+    * 키는 같은 리스트에 있는 엘리먼트 사이에서만 고유한 값이면 오케이
+
+4. 키의 종류
+    1. 숫자 사용 - 리스트의 값을 숫자로 사용(숫자 중복 시 risk가 너무 큼.)
+    2. id 값 사용 - 리스트를 만들 때 id 값을 따로 생성(주식별자 역할)
+    3. index 사용 - 리스트의 index를 map함수에 활용(기본 값)
+
+5. 폼(form) - 일반적으로 사용자로부터 입력을 받기 위해 사용
+    ```jsx
+    <form action = "전송할 주소" method = "post">   // action 속성 등 무언가 하려면 속성이 필요
+        <input ... >
+        <input type="submit">
+    </form>
+    ```
+
+6. 제어 컴포넌트
+    * 사용자가 입력한 값에 접근하고 제어할 수 있도록 해주는 컴포넌트
+    * 제어 컴포넌트에서는 모든 데이터를 state에서 관리.
+
+7. textarea 태그 - HTML에서와 다르게 싱글 태그로 사용됨
+    ```jsx
+    <textarea value = {value} onChange = {handleChange} />
+    ```
+
+8. select 태그 - 드롭다운 목록을 보여주는 태그
+    ```jsx
+    <select>
+        <option value = ".."></option>
+        <option value = ".."></option>
+        <option value = ".."></option>
+        <option value = ".."></option>
+    </select>
+    ```
+
+9. File Input 태그 - 서버로 파일을 업로드하거나 자바 스크립트의 API를 사용해서 파일을 다룰 때 사용(읽기 전용이기 때문에 리액트에서는 비제어 컴포넌트가 됨.)
+
+
 ## React1 10주차 수업(05.08)
 1. Arguments 전달하기
     * Parameter(함수 정의) - 함수에서 활용할 입력값, 매개변수
