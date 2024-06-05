@@ -1,12 +1,18 @@
 # 최상현 202030138
 
+## React1 14주차 수업(06.05)
+1. Shared State
+    * ![그림4](./image/image4.png)
+    * 공유된 State - 하위 컴포넌트가 공통된 부모 컴포넌트의 state를 공유하며 사용
+    * 어떤 컴포넌트의 state에 있는 데이터를 여러 개의 하위 컴포넌트에서 공통적으로 사용하는 경우
+Node.js
+
+
 ## React1 13주차 수업(05.29)
 1. 여러 개의 입력 다루기 - 여러 개의 state를 선언하여 각각의 입력에 대해 사용
     ```jsx
     const [haveBreakfast, setHaveBreakfast] = useState(true);
     const [numbeOfGuest, setNumberOfGuset] = useState(2);
-
-
     ```
 
 2. Input Null Value
@@ -16,11 +22,6 @@
     ```
     * 제어 컴포넌트에 value prop을 정해진 값으로 넣으면 코드를 수정해야 값을 바꿀 수 있다. 이것을 자유롭게 입력할 수 있도록 하고 싶다면 값을 undefined 또는 null을 넣으면 된다.
     * **하지만 이런 용도로 사용할 때는 placeholder가 훨씬 낫다**
-
-3. Shared State
-    * ![그림4](./image/image4.png)
-    * 공유된 State - 하위 컴포넌트가 공통된 부모 컴포넌트의 state를 공유하며 사용
-    * 어떤 컴포넌트의 state에 있는 데이터를 여러 개의 하위 컴포넌트에서 공통적으로 사용하는 경우
 
 
 ## React1 12주차 수업(05.22)
