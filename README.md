@@ -3,9 +3,38 @@
 ## React1 14주차 수업(06.05)
 1. Shared State
     * ![그림4](./image/image4.png)
-    * 공유된 State - 하위 컴포넌트가 공통된 부모 컴포넌트의 state를 공유하며 사용
+    * 공유된 State - 하위 컴포넌트가 공통된 부모 컴포넌트의 state를 공유하며 사용 *(상속의 느낌이지 상속은 아님)*
     * 어떤 컴포넌트의 state에 있는 데이터를 여러 개의 하위 컴포넌트에서 공통적으로 사용하는 경우
-Node.js
+
+2. State 끌어올리기(Lifting State Up)
+    * 하위 컴포넌트의 state를 부모 컴포넌트로 올려서 shared state를 적용합니다.
+    * ***쉽게 정리하자면 static 느낌으로 여러 개의 컴포넌트에서 동일한 state Hook의 기능을 사용한다면 state 끌어올리기를 통해 컴포넌트 사이에서 state Hook을 공유할 수 있다.***
+    * ***그리고 말이 State 끌어올리기이지, 사실상 props를 통해 함수나 변수를 전달해서 쓰는 거다***
+
+3. 합성(Composition)
+    * ![그림5](/image/image5.png)
+    * 여러 개의 컴포넌트를 합쳐서 새로운 컴포넌트를 만드는 것
+    * Containment와 Specialization이 있음
+
+4. Containment
+    * 특정 컴포넌트가 하위 컴포넌트를 포함하는 형태의 합성 방법
+    * 이런 컴포넌트에서는 children prop을 사용하여 자식 엘리먼트를 출력에 그대로 전달함.
+    * children prop은 리액트 컴포넌트의 props에 기본적으로 들어있는 children 속성을 사용
+
+5. React.createElement
+    ```jsx
+    React.createElement(
+        type,
+        [props],
+        [...children 배열]
+    )
+    ```
+    * 세 번째에 들어가는 파라미터가 children인데 여러 개의 하위 컴포너트를 가질 수 있기 때문에 배열로 되어 있음.
+
+6. Specialization
+    * 범용적으로 쓸 수 있는 컴포넌트를 만들어 놓고 이를 특수화 시켜서 컴포넌트를 사용하는 방식
+    * 특수화 - 범용적인 개념을 구별이 되도록 구체화하는 것
+    * *범용적으로 넓게 만들어 놓은 다음에 필요한 기능에 따라 빼서 만든다.*
 
 
 ## React1 13주차 수업(05.29)
