@@ -1,5 +1,73 @@
 # 최상현 202030138
 
+## React1 15주차 수업(06.11)
+1. 상속
+    * 부모 클래스를 상속받아서 새로운 자식 클래스를 만든다는 개념으로 자식 클래스는 부모 클래스가 가진 변수나 함수 등의 속성을 갖게 됨.
+    * 리액트에서는 상속이라는 방법을 사용하는 것보다는 합성을 사용해서 개발하는 것이 더 좋음.
+    * **복잡한 컴포넌트를 쪼개 여러 개의 컴포넌트를 만들고, 만든 컴포넌트들 중 필요한 것들을 조합하여 새로운 컴포넌트를 만들 것**
+
+2. 컨텍스트(전역변수, 절차와 객체 느낌)
+    * ![그림6](/image/image6.png)
+    * 리액트 컴포넌트들 사이에서 컴포넌트 트리를 통해 곧바로 컴포넌트에 전달
+    * 일일이 props로 전달한 필요 없이 위 그림처럼 데이터를 필요로 하는 컴포넌트에 곧바로 데이터 전송 가능
+    * 로그인, UI 테마, 네비게이션 바 등 모든 페이지에서 사용할 기능이 필요할 때 활용
+    * 코드도 매우 깔끔해지고 데이터를 한 곳에서 관리하기 때문에 디버깅을 하기에도 굉장히 유리
+
+3. 사용 시 고려 사항
+    * 다른 레벨의 많은 컴포넌트가 특정 데이터를 필요로 하는 경우에 사용
+    * 컴포넌트와 컨텍스트가 연동되면 재사용성이 떨어짐.
+    * 현재 지역 정보(Locale), UI 테마, 캐싱된 데이터 등 boradcast하는 경우에 적합
+
+4. 컨텍스트 사용법
+    1. React import
+        ```jsx
+        import React from "react";
+        ```
+        * React를 사용하기 때문에 React import
+
+    2. 컨텍스트 변수 생성
+        ```jsx
+        const MyContext = React.createContext('초기값');
+        ```
+        * 상위 레벨에 매칭되는 Provider가 없다면 초기값이 사용됨
+        * 초기값을 사용하지 않는다면 undefined 넣기
+
+    3. Provider
+        ```jsx
+        <MyContext.Provider value="변경값">
+            <Toolbar />
+        </MyContext.Provider>
+        ```
+        * Context.Provider로 하위 컴포넌트들을 감싸주면 모든 하위 컴포넌트들이 해당 컨텍스트의 데이터에 접근할 수 있게 됨.
+        * 하나의 Provider 컴포넌트는 여러 개의 consumer 컴포넌트와 연결될 수 있으며 여러 개의 Provider 컴포넌트는 중첩되어 사용될 수 있음
+
+    4. Consumer
+        ```jsx
+        <MyContext.Consumer>
+            {value => <컴포넌트이름 propsname={value} />}
+        </MyContext.Consumer>
+        ```
+        * 컨텍스트의 데이터를 구독하는 컴포넌트
+        * 가장 가까운 Provider 컴포넌트를 찾아 값을 적용
+
+    5. displayName
+        ```jsx
+        MyContext.displayName=`컨텍스트이름`;
+        ```
+        * 고유 식별 이름 설정
+        * 개발자 도구에 표시됨
+
+5. 여러 개의 컨텍스트 사용 - 두 개 또는 그 이상의 컨텍스트 값이 자주 함께 사용될 경우 모든 값을 한 번에 제공해 주는 별도의 render prop 컴포넌트를 직접 만든 것이 좋음
+
+6. useContext
+    ```jsx
+    const value = useContext(MyContext);
+    ```
+    * useContext() 훅은 React.createContext() 함수 호출로 생성된 컨텍스트 객체를 인자로 받아서 현재 컨텍스트 값을 리턴.
+    * 파라미터로 컨텍스트 객체를 넣어줘야 함.
+Node.js
+
+
 ## React1 14주차 수업(06.05)
 1. Shared State
     * ![그림4](./image/image4.png)
